@@ -6,21 +6,24 @@ from pdf2image import convert_from_path
 ocr_model = PaddleOCR(use_angle_cls=True)
 
 def extract_text_from_image(image_path):
+    """
+    Extract text, confidence, and bounding box from image using PaddleOCR.
+    """
     results = ocr_model.ocr(image_path)
-    extracted_text = []
+    extracted_data = []
+
     if results and len(results) > 0:
         for line in results[0]:
-            if len(line) > 1 and isinstance(line[1], (list, tuple)) and len(line[1]) >= 2:
-                text = line[1][0]        # text content
+            if len(line) >= 2:
+                box = line[0]  # coordinates
+                text = line[1][0]  # detected text
                 confidence = line[1][1]  # confidence score
-                extracted_text.append((text, confidence))
-            else:
-                # Fallback if confidence is missing
-                text = str(line[1]) if len(line) > 1 else ""
-                extracted_text.append((text, 0.0))
-    return extracted_text
-
-
+                extracted_data.append({
+                    "text": text,
+                    "confidence": confidence,
+                    "box": box
+                })
+    return extracted_data
 
 def pdf_to_images(pdf_path, output_folder="samples/temp_pages"):
     """
