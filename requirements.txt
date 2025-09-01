@@ -1,0 +1,11 @@
+paddleocr
+pytesseract
+opencv-python
+pdf2image
+PyMuPDF
+spacy
+transformers
+streamlit
+flask
+pikepdf
+faker
