@@ -1,22 +1,24 @@
 import cv2
-import os
 
 def redact_image(image_path, pii_entities, output_path):
     """
-    Apply blackout redaction to image based on detected PII entities.
+    Apply blur redaction to image based on detected PII entities.
     """
     img = cv2.imread(image_path)
 
     for entity in pii_entities:
-        bbox = entity["bbox"]
-        # Get rectangle coordinates
-        x_min = int(min(p[0] for p in bbox))
-        y_min = int(min(p[1] for p in bbox))
-        x_max = int(max(p[0] for p in bbox))
-        y_max = int(max(p[1] for p in bbox))
+        box = entity["box"]
+        x_min = int(min(p[0] for p in box))
+        y_min = int(min(p[1] for p in box))
+        x_max = int(max(p[0] for p in box))
+        y_max = int(max(p[1] for p in box))
 
-        # Draw black rectangle
-        cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (0, 0, 0), -1)
+        # Extract the region of interest
+        roi = img[y_min:y_max, x_min:x_max]
+        if roi.size > 0:  # Ensure the region exists
+            # Apply Gaussian Blur
+            blurred = cv2.GaussianBlur(roi, (51, 51), 30)
+            img[y_min:y_max, x_min:x_max] = blurred
 
     cv2.imwrite(output_path, img)
     return output_path
