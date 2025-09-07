@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OblivionNet - AI-Powered Privacy Protection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>OblivionNet</span>
+                </div>
+                <p class="tagline">AI-Powered Privacy Protection</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#upload">Upload</a>
+                <a href="#about">About</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Protect Your Privacy With Intelligence</h1>
+                <p class="hero-description">
+                    Automatically detect and redact sensitive personal information from documents, images, and multimedia files. 
+                    Supports multiple languages and formats with enterprise-grade security.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToUpload()">
+                        <i class="fas fa-upload"></i>
+                        Start Redacting
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-header">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Document Analysis</span>
+                    </div>
+                    <div class="detection-items">
+                        <div class="detection-item">
+                            <i class="fas fa-user"></i>
+                            <span>Names Detected</span>
+                            <div class="status-dot active"></div>
+                        </div>
+                        <div class="detection-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Phone Numbers</span>
+                            <div class="status-dot active"></div>
+                        </div>
+                        <div class="detection-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Addresses</span>
+                            <div class="status-dot active"></div>
+                        </div>
+                        <div class="detection-item">
+                            <i class="fas fa-id-card"></i>
+                            <span>ID Numbers</span>
+                            <div class="status-dot active"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Advanced AI technologies working together to protect your privacy</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Smart PII Detection</h3>
+                    <p>Advanced OCR and NLP models detect names, addresses, phone numbers, emails, and more across multiple languages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Flexible Redaction</h3>
+                    <p>Choose from blackout, blur, pixelate, or replace with synthetic data while maintaining document usability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Multilingual Support</h3>
+                    <p>Supports English, Hindi, Tamil, Bengali, and other Indian languages for comprehensive coverage.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-batch"></i>
+                    </div>
+                    <h3>Batch Processing</h3>
+                    <p>Process multiple documents simultaneously with intelligent categorization and consent management.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>Compliance Ready</h3>
+                    <p>Built-in audit trails and logging ensure GDPR, HIPAA, and PDP Bill compliance out of the box.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>API Integration</h3>
+                    <p>RESTful API for seamless integration with existing healthcare, fintech, and enterprise workflows.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section id="upload" class="upload-section">
+            <div class="section-header">
+                <h2>Upload & Process Documents</h2>
+                <p>Drag and drop your files or click to browse</p>
+            </div>
+            
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Drop files here or click to browse</h3>
+                    <p>Supports PDF, JPG, PNG, DOCX, and more</p>
+                    <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.docx,.txt">
+                </div>
+                
+                <div class="upload-options">
+                    <h4>Redaction Options</h4>
+                    <div class="option-grid">
+                        <label class="option-item">
+                            <input type="checkbox" name="pii-type" value="names" checked>
+                            <span class="checkmark"></span>
+                            <i class="fas fa-user"></i>
+                            Names
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="pii-type" value="addresses" checked>
+                            <span class="checkmark"></span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Addresses
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="pii-type" value="phones" checked>
+                            <span class="checkmark"></span>
+                            <i class="fas fa-phone"></i>
+                            Phone Numbers
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="pii-type" value="emails" checked>
+                            <span class="checkmark"></span>
+                            <i class="fas fa-envelope"></i>
+                            Email Addresses
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="pii-type" value="ids" checked>
+                            <span class="checkmark"></span>
+                            <i class="fas fa-id-card"></i>
+                            ID Numbers
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="pii-type" value="faces" checked>
+                            <span class="checkmark"></span>
+                            <i class="fas fa-user-circle"></i>
+                            Faces/Photos
+                        </label>
+                    </div>
+                    
+                    <div class="redaction-methods">
+                        <h4>Redaction Method</h4>
+                        <div class="method-options">
+                            <label class="method-item">
+                                <input type="radio" name="redaction-method" value="blackout" checked>
+                                <span class="radio-mark"></span>
+                                <i class="fas fa-square"></i>
+                                Blackout
+                            </label>
+                            <label class="method-item">
+                                <input type="radio" name="redaction-method" value="blur">
+                                <span class="radio-mark"></span>
+                                <i class="fas fa-eye-slash"></i>
+                                Blur
+                            </label>
+                            <label class="method-item">
+                                <input type="radio" name="redaction-method" value="pixelate">
+                                <span class="radio-mark"></span>
+                                <i class="fas fa-th"></i>
+                                Pixelate
+                            </label>
+                            <label class="method-item">
+                                <input type="radio" name="redaction-method" value="synthetic">
+                                <span class="radio-mark"></span>
+                                <i class="fas fa-magic"></i>
+                                Synthetic Data
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="process-button-container">
+                <button class="btn-process" id="processBtn" disabled>
+                    <i class="fas fa-cog"></i>
+                    Process Documents
+                </button>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-header">
+                    <h3>Processing Documents...</h3>
+                    <div class="progress-stats">
+                        <span id="progressText">0 of 0 files processed</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="process-steps">
+                    <div class="step" id="step1">
+                        <i class="fas fa-upload"></i>
+                        <span>Uploading</span>
+                    </div>
+                    <div class="step" id="step2">
+                        <i class="fas fa-search"></i>
+                        <span>Analyzing</span>
+                    </div>
+                    <div class="step" id="step3">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Redacting</span>
+                    </div>
+                    <div class="step" id="step4">
+                        <i class="fas fa-download"></i>
+                        <span>Complete</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="section-header">
+                    <h3>Processing Results</h3>
+                </div>
+                <div class="results-grid" id="resultsGrid">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About OblivionNet</h2>
+                    <p>
+                        OblivionNet is an AI-powered privacy protection platform designed to automatically detect and redact 
+                        sensitive personal information from documents and multimedia content. Built with cutting-edge machine 
+                        learning technologies, it provides enterprise-grade privacy protection while maintaining document usability.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Languages Supported</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Document Types</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Compliance Ready</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="tech-stack">
+                        <h4>Powered By</h4>
+                        <div class="tech-items">
+                            <div class="tech-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-eye"></i>
+                                <span>Computer Vision</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-language"></i>
+                                <span>NLP Processing</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-font"></i>
+                                <span>OCR Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>OblivionNet</span>
+                    </div>
+                    <p>AI-powered privacy protection for the modern world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#upload">Upload</a></li>
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OblivionNet by Tech Spectrans6. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

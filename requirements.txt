@@ -1,11 +1,41 @@
-paddleocr
-pytesseract
-opencv-python
-pdf2image
-PyMuPDF
-spacy
-transformers
-streamlit
-flask
-pikepdf
-faker
+# OblivionNet Dependencies
+# Core Flask web framework
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# OCR and PDF processing
+paddleocr==2.7.3
+pdf2image==1.16.3
+Pillow==10.0.1
+
+# Computer Vision and Image Processing
+opencv-python==4.8.1.78
+numpy==1.24.3
+
+# Natural Language Processing
+spacy==3.7.2
+# Run: python -m spacy download en_core_web_sm
+
+# File handling and utilities
+python-multipart==0.0.6
+secure-filename==0.1
+
+# Logging and monitoring
+coloredlogs==15.0.1
+
+# Optional: Advanced ML libraries (uncomment if needed)
+# transformers==4.34.0
+# torch==2.0.1
+# torchvision==0.15.2
+
+# System dependencies (install separately):
+# - poppler-utils (Linux: apt-get install poppler-utils)
+# - tesseract-ocr (Linux: apt-get install tesseract-ocr)
+# 
+# Windows users:
+# - Download poppler from: https://github.com/oschwartz10612/poppler-windows/releases
+# - Download tesseract from: https://github.com/UB-Mannheim/tesseract/wiki
+#
+# macOS users:
+# - brew install poppler
+# - brew install tesseract
